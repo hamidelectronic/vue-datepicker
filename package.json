@@ -1,8 +1,8 @@
 {
-  "name": "vue-datepicker",
-  "version": "1.3.0",
-  "description": "calendar and datepicker component with material design for Vue.js ",
-  "main": "vue-datepicker.vue",
+  "name": "vue-persian-datepicker",
+  "version": "1.0.0",
+  "description": "persian calendar and datepicker component with material design for Vue.js ",
+  "main": "vue-persian-datepicker.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,11 @@
   "keywords": [
     "vue",
     "datepicker",
-    "vue-datepicker"
+    "vue-datepicker",
+    "vue-persian-datepicker",
+    "persian-datepicker",
+    "persian datepicker",
+    "multi datepicker"
   ],
   "author": "Awe",
   "license": "MIT",
@@ -22,7 +26,7 @@
   },
   "homepage": "https://github.com/hamidelectronic/vue-datepicker#readme",
   "dependencies": {
-    "moment": "^2.11.1"
+    "moment-jalaali": "^0.9.1"
   },
   "browserify": {
     "transform": [
