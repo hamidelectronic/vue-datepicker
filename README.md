@@ -5,7 +5,7 @@ Persian calendar and datepicker component with material design for Vue.js
 
 The demo page is [HERE](http://hilongjw.github.io/vue-datepicker/demo.html).
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot1.png)
 
 # Requirements
 
