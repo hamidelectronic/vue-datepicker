@@ -6,11 +6,12 @@ Persian calendar and datepicker component with material design for Vue.js
 The demo page is [HERE](http://hilongjw.github.io/vue-datepicker/demo.html).
 
 ![Screenshot](screenshot1.png)
+![Screenshot](screenshot2.png)
 
 # Requirements
 
 - [Vue.js](https://github.com/yyx990803/vue) `^2.0.0`
-- [moment](https://github.com/moment/moment) `^2.11.1`
+- [moment-jalaali](https://github.com/jalaali/moment-jalaali) `^0.9.1`
 
 # Installation
 
@@ -58,7 +59,8 @@ export default {
         },
         buttons: {
           ok: 'Ok',
-          cancel: 'Cancel'
+          cancel: 'Cancel',
+          next: 'Next'
         },
         overlayOpacity: 0.5, // 0.5 as default
         dismissible: true // as true as default
@@ -67,13 +69,19 @@ export default {
         type: 'min',
         week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
         month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        format: 'YYYY-MM-DD HH:mm'
+        jWeek: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'],
+        jMonth: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
+        format: 'YYYY-MM-DD HH:mm:ss',
+        jalaali: false
       },
       multiOption: {
         type: 'multi-day',
         week: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
         month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        format:"YYYY-MM-DD HH:mm"
+        jWeek: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'],
+        jMonth: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
+        format:"YYYY-MM-DD HH:mm:ss",
+        jalaali: false
       },
       limit: [{
         type: 'weekday',
@@ -93,12 +101,9 @@ export default {
 </script>
 <template>
   <div class="card">
-    <!-- for Vue 2.0 -->
     <div class="row">
-      <span>Departure Date：</span>
       <date-picker :date="startTime" :option="option" :limit="limit"></date-picker>
     </div>
-
   </div>
 </template>
 ```
@@ -120,6 +125,12 @@ export default {
 format: 'YYYY-MM-DD HH:mm'
 ```
 
+ * jalaali
+
+```
+jalaali: false //true for jalaali calendar
+```
+
  * placeholder
 
 ```
@@ -137,6 +148,20 @@ placeholder: 'when?'
 ```
   month: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September', 'October', 'November', 'December']
 ```
+
+
+ * jWeek
+
+```
+ jWeek: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج']
+```
+
+ * jMonth
+
+```
+  jMonth: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
+```
+
 
 * wrapperClass
 
@@ -179,7 +204,8 @@ inputStyle: {
 ```
 buttons: {
   ok: 'OK',
-  cancel: 'Cancel'
+  cancel: 'Cancel',
+  next: 'Next'
 }
 ```
 
