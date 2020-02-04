@@ -1,4 +1,4 @@
-# vue-datepicker
+# vue-persian-datepicker
 Persian calendar and datepicker component with material design for Vue.js
 
 # Demo
@@ -18,7 +18,7 @@ The demo page is [HERE](https://hamidelectronic.github.io/vue-persian-datepicker
 ## npm
 
 ```shell
-$ npm install vue-datepicker
+$ npm install vue-persian-datepickers
 ```
 
 # Usage
