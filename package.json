@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hilongjw/vue-datepicker.git"
+    "url": "git+https://github.com/hamidelectronic/vue-datepicker.git"
   },
   "keywords": [
     "vue",
@@ -18,9 +18,9 @@
   "author": "Awe",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hilongjw/vue-datepicker/issues"
+    "url": "https://github.com/hamidelectronic/vue-datepicker/issues"
   },
-  "homepage": "https://github.com/hilongjw/vue-datepicker#readme",
+  "homepage": "https://github.com/hamidelectronic/vue-datepicker#readme",
   "dependencies": {
     "moment": "^2.11.1"
   },
