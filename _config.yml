@@ -1,0 +1,8 @@
+title: Vue-datepicker
+description: calendar and datepicker component with material design for Vue.js
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
