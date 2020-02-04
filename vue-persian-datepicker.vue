@@ -380,16 +380,33 @@
     color: #fff;
     transform: translateY(-50%);
   }
+  button {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
 </style>
 <template>
   <div class="cov-vue-date" :class="option.wrapperClass ? option.wrapperClass : {}">
     <div class="datepickbox">
       <!--<input type="text" title="input date" class="cov-datepicker" readonly="readonly" :placeholder="option.placeholder" v-model="date.time" :required="required" @click="showCheck" @focus="showCheck" :style="option.inputStyle ? option.inputStyle : {}" :class="option.inputClass ? option.inputClass : {}"/>-->
       <div class="row">
-        <k-button @click="showCheck">انتخاب</k-button>
+        <button @click="showCheck">{{option.buttons? option.buttons.select : 'Select'}}</button>
       </div>
       <div class="hd-times">
-        <div v-if="isSelectedDays && option.type === 'multi-day'" class="item" v-for="(item , index) in selectedDays">
+        <div v-if="isSelectedDays && option.type === 'multi-day'" class="item" v-for="(item , index) in selectedDays" v-bind:key="item">
           <span class="date">{{item.split(' ')[0]}}</span>
           <span class="time">{{item.split(' ')[1]}}</span>
         </div>
@@ -498,7 +515,8 @@
                         buttons: {
                             ok: 'Ok',
                             cancel: 'Cancel',
-                            next: 'Next'
+                            next: 'Next',
+                            select: 'Select'
                         },
                         overlayOpacity: 0.5,
                         dismissible: true,

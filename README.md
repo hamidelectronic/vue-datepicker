@@ -60,7 +60,8 @@ export default {
         buttons: {
           ok: 'Ok',
           cancel: 'Cancel',
-          next: 'Next'
+          next: 'Next',
+          select: 'Select'
         },
         overlayOpacity: 0.5, // 0.5 as default
         dismissible: true // as true as default
@@ -205,7 +206,8 @@ inputStyle: {
 buttons: {
   ok: 'OK',
   cancel: 'Cancel',
-  next: 'Next'
+  next: 'Next',
+  select: 'Select'
 }
 ```
 
