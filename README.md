@@ -73,7 +73,8 @@ export default {
         jWeek: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'],
         jMonth: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
         format: 'YYYY-MM-DD HH:mm:ss',
-        jalaali: false
+        jalaali: false,
+        fontFamily: 'Tahoma'
       },
       multiOption: {
         type: 'multi-day',
@@ -82,7 +83,8 @@ export default {
         jWeek: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'],
         jMonth: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
         format:"YYYY-MM-DD HH:mm:ss",
-        jalaali: false
+        jalaali: false,
+        fontFamily: 'Tahoma'
       },
       limit: [{
         type: 'weekday',
@@ -131,6 +133,13 @@ format: 'YYYY-MM-DD HH:mm'
 ```
 jalaali: false //true for jalaali calendar
 ```
+
+ * fontFamily
+
+```
+fontFamily: 'Tahoma'
+```
+
 
  * placeholder
 

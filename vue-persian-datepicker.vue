@@ -65,7 +65,6 @@
     background: #3F51B5;
     overflow: hidden;
     font-size: 14px;
-    font-family: iranyekan;
     font-weight: 400;
     position: fixed;
     display: block;
@@ -120,7 +119,6 @@
     color: #000;
     background: #fff;
     vertical-align: middle;
-    padding: 3px;
     margin: 2px;
     transition: color 450ms ease;
 
@@ -417,7 +415,7 @@
 
     </div>
     <div class="datepicker-overlay" v-if="showInfo.check" @click="dismiss($event)" v-bind:style="{'background' : option.overlayOpacity? 'rgba(0,0,0,'+option.overlayOpacity+')' : 'rgba(0,0,0,0.5)'}">
-      <div class="cov-date-body" :style="{'background-color': option.color ? option.color.header : '#3f51b5'}">
+      <div class="cov-date-body" :style="covDateBody">
         <div class="cov-date-monthly">
           <div class="cov-date-next" @click="nextMonth('next')">«</div>
           <div class="cov-date-caption" :style="{'color': option.color ? option.color.headerText : '#fff'}">
@@ -520,7 +518,8 @@
                         },
                         overlayOpacity: 0.5,
                         dismissible: true,
-                        jalaali: false
+                        jalaali: false,
+                        fontFamily: 'Tahoma'
                     };
                 }
             },
@@ -963,6 +962,14 @@
                     document.querySelector('.min-box').scrollTop = (document.querySelector('.min-item.active').offsetTop || 0) - 250;
                 });
             },
+        },
+        computed: {
+            covDateBody() {
+                return {
+                    "font-family": this.option.fontFamily ? this.option.fontFamily : 'Tahoma',
+                    'background-color': this.option.color ? this.option.color.header : '#3f51b5'
+                };
+            }
         }
     };
 </script>
