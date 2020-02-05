@@ -404,10 +404,12 @@
         <button @click="showCheck">{{option.buttons? option.buttons.select : 'Select'}}</button>
       </div>
       <div class="hd-times">
-        <div v-if="isSelectedDays && option.type === 'multi-day'" class="item" v-for="(item , index) in selectedDays" v-bind:key="item">
-          <span class="date">{{item.split(' ')[0]}}</span>
-          <span class="time">{{item.split(' ')[1]}}</span>
-        </div>
+        <ul v-if="isSelectedDays && option.type === 'multi-day'">
+          <div class="item" v-for="(item) in selectedDays" v-bind:key="item">
+            <span class="date">{{item.split(' ')[0]}}</span>
+            <span class="time">{{item.split(' ')[1]}}</span>
+          </div>
+        </ul>
         <div v-if="option.type !== 'multi-day'" class="item" >
           <span class="date">{{date.time}}</span>
         </div>
@@ -429,23 +431,23 @@
           <div class="cov-picker-box">
             <div class="week">
               <ul>
-                <li v-for="weekie in library.week">{{weekie}}</li>
+                <li v-for="weekie in library.week" v-bind:key="weekie">{{weekie}}</li>
               </ul>
             </div>
-            <div class="day" v-for="day in dayList" track-by="$index" @click="checkDay(day)" :class="{'checked':day.checked,'unavailable':day.unavailable,'passive-day': !(day.inMonth)}" :style="day.checked ? (option.color && option.color.checkedDay ? { background: option.color.checkedDay } : { background: '#417DF4' }) : {}">
+            <div class="day" v-for="day in dayList" v-bind:key="day" track-by="$index" @click="checkDay(day)" :class="{'checked':day.checked,'unavailable':day.unavailable,'passive-day': !(day.inMonth)}" :style="day.checked ? (option.color && option.color.checkedDay ? { background: option.color.checkedDay } : { background: '#417DF4' }) : {}">
               {{(day.inMonth) ? day.value : ''}}
             </div>
           </div>
         </div>
         <div class="cov-date-box list-box" v-if="showInfo.year">
           <div class="cov-picker-box date-list" id="yearList">
-            <div class="date-item" v-for="yearItem in library.year" track-by="$index" @click="setYear(yearItem)">{{yearItem}}</div>
+            <div class="date-item" v-for="yearItem in library.year" v-bind:key="yearItem" track-by="$index" @click="setYear(yearItem)">{{yearItem}}</div>
           </div>
         </div>
 
         <div class="cov-date-box list-box" v-if="showInfo.month">
           <div class="cov-picker-box date-list">
-            <div class="date-item" v-for="monthItem in library.month" track-by="$index" @click="setMonth(monthItem)">{{monthItem}}</div>
+            <div class="date-item" v-for="monthItem in library.month" v-bind:key="monthItem" track-by="$index" @click="setMonth(monthItem)">{{monthItem}}</div>
           </div>
         </div>
         <div class="cov-date-box list-box" v-if="showInfo.hour">
@@ -454,12 +456,12 @@
               <div class="hour-box">
                 <div class="mui-pciker-rule mui-pciker-rule-ft"></div>
                 <ul>
-                  <li class="hour-item" v-for="hitem in hours" @click="setTime('hour', hitem, hours)" :class="{'active':hitem.checked}">{{hitem.value}}</li>
+                  <li class="hour-item" v-for="hitem in hours" v-bind:key="hitem" @click="setTime('hour', hitem, hours)" :class="{'active':hitem.checked}">{{hitem.value}}</li>
                 </ul>
               </div>
               <div class="min-box">
                 <div class="mui-pciker-rule mui-pciker-rule-ft"></div>
-                <div class="min-item" v-for="mitem in mins" @click="setTime('min',mitem, mins)" :class="{'active':mitem.checked}">{{mitem.value}}</div>
+                <div class="min-item" v-for="mitem in mins" v-bind:key="mitem" @click="setTime('min',mitem, mins)" :class="{'active':mitem.checked}">{{mitem.value}}</div>
               </div>
             </div>
           </div>
@@ -474,7 +476,6 @@
 </template>
 <script>
     'use strict';
-
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
@@ -677,7 +678,9 @@
                             }
                         } finally {
                             if (_didIteratorError) {
-                                throw _iteratorError;
+                                /* eslint-disable */
+                                console.log(_iteratorError);
+                                /* eslint-enable */
                             }
                         }
                     }
@@ -773,8 +776,6 @@
                 }
             },
             showYear: function showYear() {
-                var _this3 = this;
-
                 var year = (0, _moment2.default)(this.checked.currentMoment).year();
                 this.library.year = [];
                 var yearTmp = [];
@@ -829,7 +830,7 @@
                 var _this4 = this;
 
                 var listDom = document.getElementById('yearList');
-                listDom.addEventListener('scroll', function (e) {
+                listDom.addEventListener('scroll', function () {
                     if (listDom.scrollTop < listDom.scrollHeight - 100) {
                         var len = _this4.library.year.length;
                         var lastYear = _this4.library.year[len - 1];
@@ -902,7 +903,9 @@
                         }
                     } finally {
                         if (_didIteratorError2) {
-                            throw _iteratorError2;
+                            /* eslint-disable */
+                            console.log(_iteratorError2);
+                            /* eslint-enable */
                         }
                     }
                 }
