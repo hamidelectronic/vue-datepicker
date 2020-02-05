@@ -1,9 +1,9 @@
-# vue-persian-datepicker
+# vue-persian-datepickers
 Persian calendar and datepicker component with material design for Vue.js
 
 # Demo
 
-The demo page is [HERE](https://hamidelectronic.github.io/vue-persian-datepicker/demo.html).
+The demo page is [HERE](https://hamidelectronic.github.io/vue-persian-datepickers/demo.html).
 
 ![Screenshot](screenshot1.png)
 ![Screenshot](screenshot2.png)
