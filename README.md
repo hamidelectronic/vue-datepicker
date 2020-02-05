@@ -25,7 +25,7 @@ $ npm install vue-persian-datepickers
 
 ```html
 <script>
-import myDatepicker from 'vue-datepicker'
+import myDatepicker from 'vuePersianDatepicker'
 
 export default {
   data () {
