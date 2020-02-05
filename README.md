@@ -25,7 +25,7 @@ $ npm install vue-persian-datepickers
 
 ```html
 <script>
-import myDatepicker from 'vuePersianDatepicker'
+import PersianDatPicker from "vue-persian-datepickers"
 
 export default {
   data () {
@@ -98,14 +98,14 @@ export default {
     }
   },
   components: {
-    'date-picker': myDatepicker
+      PersianDatPicker
   }
 }
 </script>
 <template>
   <div class="card">
     <div class="row">
-      <date-picker :date="startTime" :option="option" :limit="limit"></date-picker>
+      <PersianDatPicker :date="startTime" :option="option" :limit="limit"></PersianDatPicker>
     </div>
   </div>
 </template>
