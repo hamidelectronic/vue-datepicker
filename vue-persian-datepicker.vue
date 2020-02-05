@@ -596,7 +596,7 @@
             },
             nextMonth: function nextMonth(type) {
                 var next = null;
-                type === 'next' ? next = (0, _moment2.default)(this.checked.currentMoment).add(1, this.option.jalaali ? 'jM' : 'M') : next = (0, _moment2.default)(this.checked.currentMoment).add(-1, this.option.jalaali ? 'jM' : 'M');
+                type === 'next' ? next = (0, _moment2.default)(this.checked.currentMoment).add(1, 'jM') : next = (0, _moment2.default)(this.checked.currentMoment).add(-1, 'jM');
                 next = (0, _moment2.default)(next).format('YYYY-MM-DD HH:mm');
                 this.showDay(next);
             },
@@ -604,7 +604,7 @@
                 if (time === undefined || !(0, _moment2.default)(time, this.option.format).isValid()) {
                     this.checked.currentMoment = (0, _moment2.default)().format(this.option.jalaali ? 'jYYYY-jMM-jDD HH:mm:ss' : 'YYYY-MM-DD HH:mm:ss');
                 } else {
-                    this.checked.currentMoment = (0, _moment2.default)(time, this.option.format).format(this.option.jalaali ? 'jYYYY-jMM-jDD HH:mm:ss' : 'YYYY-MM-DD HH:mm:ss');
+                    this.checked.currentMoment = (0, _moment2.default)(time, this.option.format).format('YYYY-MM-DD HH:mm:ss');
                 }
                 this.showOne('day');
                 this.checked.year = (0, _moment2.default)(this.checked.currentMoment).format('YYYY');
